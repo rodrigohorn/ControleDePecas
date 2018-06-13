@@ -43,9 +43,6 @@
                         </td>
                         <td>{{ $peca->marca }}</td>
                         <td>{{ $peca->valor }}</td>
-
-
-
                     </tr>
                 @endforeach
                 </tbody>
