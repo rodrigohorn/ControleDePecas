@@ -16,12 +16,13 @@
                     <th>Estoque</th>
                     <th>Marca</th>
                     <th>Valor</th>
+                    <th>Opções</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($pecas as $peca)
                     <tr>
-                        <th><a href="{{ route('fornecedor.show', $peca->id  ) }}">
+                        <th><a href="{{ route('peca.show', $peca->id  ) }}">
                                 {{ $peca->id }}
                             </a>
                         </th>
@@ -43,6 +44,22 @@
                         </td>
                         <td>{{ $peca->marca }}</td>
                         <td>{{ $peca->valor }}</td>
+                        <td>
+                            <form action="{{ route('peca.edit', $peca->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="GET">
+                                <button class="btn btn-info">
+                                    Editar
+                                </button>
+                            </form>
+                            <form action="{{ route('peca.destroy', $peca->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir?')">
+                                    Excluir
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

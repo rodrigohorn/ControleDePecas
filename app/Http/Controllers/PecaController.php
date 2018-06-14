@@ -58,9 +58,13 @@ class PecaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Peca $peca)
     {
-        //
+        return view('peca.show', [
+            'peca' => $peca,
+            'fornecedores' => Fornecedor::all(),
+            'estoques' => Estoque::all()
+        ]);
     }
 
     /**
@@ -71,7 +75,11 @@ class PecaController extends Controller
      */
     public function edit(Peca $peca)
     {
-        return view('peca.edit', array('peca' => $peca));
+        return view('peca.edit', array(
+            'peca' => $peca,
+            'fornecedores' => Fornecedor::orderBy('nome')->get(),
+            'estoques' => Estoque::orderBy('nome')->get()
+        ));
     }
 
     /**
@@ -93,8 +101,9 @@ class PecaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    public function destroy(Peca $peca)
+{
+    $peca->delete();
+    return redirect()->route('peca.index');
+}
 }

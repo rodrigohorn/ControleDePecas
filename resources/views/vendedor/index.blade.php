@@ -14,6 +14,8 @@
                     <th>Nome</th>
                     <th>Fornecedor</th>
                     <th>Contato</th>
+                    <th>Opcões</th>
+
 
                 </tr>
                 </thead>

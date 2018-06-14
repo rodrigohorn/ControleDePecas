@@ -14,6 +14,7 @@
                     <th>Nome</th>
                     <th>Cidade</th>
                     <th>Endereço</th>
+                    <th>Opções</th>
 
                 </tr>
                 </thead>
@@ -28,6 +29,24 @@
                         <td>{{ $estoque->nome }}</td>
                         <td>{{ $estoque->cidade }}</td>
                         <td>{{ $estoque->endereco }}</td>
+                        <td>
+
+                            <form action="{{ route('estoque.edit', $estoque->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="GET">
+                                <button class="btn btn-info">
+                                    Editar
+                                </button>
+                            </form>
+                            <form action="{{ route('estoque.destroy', $estoque->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir?')">
+                                    Excluir
+                                </button>
+                            </form>
+
+                        </td>
 
 
 

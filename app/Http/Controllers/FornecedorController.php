@@ -4,7 +4,7 @@ namespace Chat\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Chat\Fornecedor;
-use Chat\Vendedor;
+
 
 class FornecedorController extends Controller
 {
@@ -85,8 +85,9 @@ class FornecedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Fornecedor $fornecedor)
     {
-        //
+        $fornecedor->delete();
+        return redirect()->route('fornecedor.index');
     }
 }
