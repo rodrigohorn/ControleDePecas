@@ -20,10 +20,10 @@ class CreatePecasTable extends Migration
             $table->unsignedInteger('id_estoque');
             $table->string('marca');
             $table->decimal('valor', 10, 2);
-            $table->timestamps();
+            $table->timestamps(); // cria o crate e update  no banco de dados
 
-            $table->foreign('id_fornecedor')->references('id')->on('fornecedores');
-            $table->foreign('id_estoque')->references('id')->on('estoques');
+            $table->foreign('id_fornecedor')->references('id')->on('fornecedores'); // interligação
+            $table->foreign('id_estoque')->references('id')->on('estoques');  // interligação
         });
     }
 

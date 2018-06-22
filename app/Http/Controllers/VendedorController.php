@@ -89,9 +89,10 @@ class VendedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Vendedor $vendedor)
     {
-        //
+        $vendedor->delete();
+        return redirect()->route('vendedor.index');
     }
 }
 

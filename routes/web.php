@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('message', 'MessageController');
+
 
 Route::resource('peca', 'PecaController')->middleware('auth');
 Route::resource('fornecedor', 'FornecedorController')->middleware('auth');

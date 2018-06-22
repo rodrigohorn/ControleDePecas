@@ -31,7 +31,20 @@
                         <td>{{ $vendedor->id_fornecedor }}</td>
                         <td>{{ $vendedor->contato}}</td>
 
-
+                        <td>
+                            <form action="{{ route('vendedor.edit', $vendedor->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="GET">
+                                <button class="btn btn-info">
+                                    Editar
+                                </button>
+                            </form>
+                            <form action="{{ route('vendedor.destroy', $vendedor->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir?')">
+                                    Excluir
+                                </button>
                     </tr>
                 @endforeach
                 </tbody>
