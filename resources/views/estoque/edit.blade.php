@@ -25,7 +25,7 @@
                     <label for="text">Endereço</label>
                     <input type="text" class="form-control" name="endereco" placeholder="Endereco" value="{{ $estoque->endereco }}">
                 </div>
-                <button class="btn btn-info">Editar</button>
+                <button class="btn btn-info">Salvar</button>
             </form>
         </div>
     </div>

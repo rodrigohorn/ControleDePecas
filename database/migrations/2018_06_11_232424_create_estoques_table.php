@@ -18,7 +18,7 @@ class CreateEstoquesTable extends Migration
             $table->string('nome');
             $table->string('cidade');
             $table->string('endereco');
-            $table->timestamps();
+            $table->timestamps(); // cria dois campos que armazena data e hora e data e hora da ultima atualização
         });
     }
 
@@ -27,7 +27,7 @@ class CreateEstoquesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down()     // indica o que deve ser feito quando ocorre uma reversão
     {
         Schema::dropIfExists('estoques');
     }

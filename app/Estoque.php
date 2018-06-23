@@ -8,7 +8,7 @@ class Estoque extends Model
 {
     protected $table = 'estoques';
 
-    protected $fillable = [
+    protected $fillable = [  //“fillable” que indica quais os dados serão acessíveis:
         'id',
         'nome',
         'cidade',
@@ -16,7 +16,7 @@ class Estoque extends Model
     ];
 
     public function pecas() {
-        return $this->hasMany(Pecas::class);
+        return $this->hasMany(Pecas::class); // ligação para peças, “has many” significa “tem muitos”
     }
 
 }

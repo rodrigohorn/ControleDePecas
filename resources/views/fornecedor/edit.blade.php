@@ -28,7 +28,7 @@
                         <label for="text">Contato</label>
                         <input type="text" class="form-control" name="contato" placeholder="contato" value="{{ $fornecedor->contato }}">
                     </div>
-                <button class="btn btn-info">Editar</button>
+                <button class="btn btn-info">Salvar</button>
             </form>
         </div>
     </div>
