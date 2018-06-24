@@ -23,8 +23,7 @@
             @endforeach
             <p><b>Marca: </b>{{ $peca->marca }}</p>
             <p><b>Valor: </b>{{ $peca->valor }}</p>
-            <p><b>Criada: </b>{{ $peca->created_at }}</p>
-            <p><b>Alterada: </b>{{ $peca->updated_at  }}</p>
+
         </div>
         <a href="{{ route('peca.index') }}">Voltar</a>
     </div>

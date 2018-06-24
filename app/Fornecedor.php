@@ -8,7 +8,7 @@ class Fornecedor extends Model
 {
     protected $table = 'fornecedores';
 
-    protected $fillable = [
+    protected $fillable = [  //“fillable” que indica quais os dados serão acessíveis:
         'id',
         'nome',
         'cidade',
@@ -17,10 +17,10 @@ class Fornecedor extends Model
     ];
 
     public function pecas() {
-        return $this->hasMany(Peca::class);
+        return $this->hasMany(Peca::class);  // ligação para peças, “has many” significa “tem muitos”
     }
 
     public function vendedores() {
-        return $this->hasMany(Vendedor::class);
+        return $this->hasMany(Vendedor::class);   // ligação para vendedor, “has many” significa “tem muitos”
     }
 }

@@ -40,7 +40,7 @@
                             </form>
                             <form action="{{ route('estoque.destroy', $estoque->id) }}" method="POST">
                                 {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_method" value="DELETE"> {{--_method  Este campo que fará a ligação dentro da nossa rota--}}
                                 <button class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir?')">
                                     Excluir
                                 </button>

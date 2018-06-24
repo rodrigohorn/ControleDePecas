@@ -50,7 +50,8 @@ class FornecedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Fornecedor $fornecedor)
+    public function show(Fornecedor $fornecedor)     //serve para mostrar detalhes de um registro
+
     {
         return view('fornecedor.show', [
             'fornecedor' => $fornecedor
