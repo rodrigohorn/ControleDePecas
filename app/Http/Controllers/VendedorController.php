@@ -17,7 +17,10 @@ class VendedorController extends Controller
      */
     public function index()
     {
-        return view('vendedor.index', ['vendedor' => Vendedor::orderBy('nome')->get()]);
+        return view('vendedor.index', ['vendedor' => Vendedor::orderBy('nome')->get(),
+            'fornecedores' => Fornecedor::orderBy('nome')->get()
+
+            ]);
     }
 
     /**
@@ -54,9 +57,12 @@ class VendedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Vendedor $vendedor)
     {
-
+        return view('vendedor.show', [
+            'vendedor' => $vendedor,
+             'fornecedores' => Fornecedor::all()
+        ]);
     }
 
     /**
@@ -67,7 +73,10 @@ class VendedorController extends Controller
      */
     public function edit(Vendedor $vendedor)
     {
-        return view('vendedor.edit', array('vendedor' => $vendedor));
+        return view('vendedor.edit', array(
+            'vendedor' => $vendedor,
+        'fornecedores' => Fornecedor::orderBy('nome')->get(),
+    ));
     }
 
     /**

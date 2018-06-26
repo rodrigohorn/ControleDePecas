@@ -28,7 +28,13 @@
                         </th>
 
                         <td>{{ $vendedor->nome }}</td>
-                        <td>{{ $vendedor->id_fornecedor }}</td>
+                        <td>
+                        @foreach($fornecedores as $fornecedor)
+                            @if ($fornecedor->id == $vendedor->id_fornecedor)
+                                {{ $fornecedor->nome }}
+                            @endif
+                        @endforeach
+                        </td>
                         <td>{{ $vendedor->contato}}</td>
 
                         <td>

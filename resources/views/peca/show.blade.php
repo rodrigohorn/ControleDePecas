@@ -11,6 +11,7 @@
         <div class="panel-body">
             <p><b>Id: </b>{{ $peca->id }}</p>
             <p><b>Nome: </b>{{ $peca->nome }}</p>
+
             @foreach($fornecedores as $fornecedor)
                 @if($fornecedor->id == $peca->id_fornecedor)
                     <p><b>Fornecedor: </b>{{ $fornecedor->nome }}</p>
@@ -21,6 +22,7 @@
                     <p><b>Estoque: </b>{{ $estoque->nome }}</p>
                 @endif
             @endforeach
+
             <p><b>Marca: </b>{{ $peca->marca }}</p>
             <p><b>Valor: </b>{{ $peca->valor }}</p>
 
