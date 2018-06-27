@@ -16,7 +16,6 @@
                     <label for="text">Nome</label>
                     <input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ $estoque->nome }}">
                 </div>
-                </div>
                 <div class="form-group">
                     <label for="text">Cidade</label>
                     <input type="text" class="form-control" name="cidade" placeholder="Cidade" value="{{ $estoque->cidade }}">

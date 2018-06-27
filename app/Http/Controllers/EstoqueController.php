@@ -13,7 +13,9 @@ class EstoqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //ele ta chamando a view index.blade.php que ta dentro da pasta estoque nas views,
+        // e passa pra essa view uma variável chamada 'estoque' passando um array
+        // com tds os estoques cadastrados no teu sistema
     {
         return view('estoque.index', ['estoque' => Estoque::orderBy('nome')->get()]);
     }

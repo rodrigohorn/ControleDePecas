@@ -27,17 +27,3 @@ Route::resource('estoque', 'EstoqueController')->middleware('auth');
 Route::resource('vendedor', 'VendedorController')->middleware('auth');
 
 
-Route::get('message.report',[
-    'as' => 'message.report',
-    'uses' => 'MessageController@report'
-]);
-//
-//Route::get('pecas',[
-//    'as' => 'pecas.index',
-//    'uses' => 'PecaController@index'
-//]);
-//
-//Route::get('pecas/criar',[
-//    'as' => 'pecas.create',
-//    'uses' => 'PecaController@create'
-//]);
