@@ -20,10 +20,10 @@ class CreatePecasTable extends Migration
             $table->unsignedInteger('id_estoque');
             $table->string('marca');
             $table->decimal('valor', 10, 2);
-            $table->timestamps(); // cria o crate e update  no banco de dados
+            $table->timestamps();
 
-            $table->foreign('id_fornecedor')->references('id')->on('fornecedores'); // interligação
-            $table->foreign('id_estoque')->references('id')->on('estoques');  // interligação
+            $table->foreign('id_fornecedor')->references('id')->on('fornecedores');
+            $table->foreign('id_estoque')->references('id')->on('estoques');
         });
     }
 
@@ -34,6 +34,6 @@ class CreatePecasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pecas');
+        Schema::dropIfExists('pecas'); //indica o que deve ser feito quando acontece uma reversão
     }
 }

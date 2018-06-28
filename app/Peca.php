@@ -8,7 +8,7 @@ class Peca extends Model
 {
     protected $table = 'pecas';
 
-    protected $fillable = [  //“fillable” que indica quais os dados serão acessíveis:
+    protected $fillable = [
         'id',
         'nome',
         'id_fornecedor',
@@ -18,10 +18,10 @@ class Peca extends Model
     ];
 
     public function fornecedores() {
-        return $this->hasMany(Fornecedor::class); // pega classe do controle
+        return $this->hasMany(Fornecedor::class);
     }
     public function estoques() {
-        return $this->hasOne(Estoque::class); // pega classe do controle
+        return $this->hasOne(Estoque::class);
     }
 
 }

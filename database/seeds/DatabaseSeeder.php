@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserTableSeeder::class);
         $this->call(EstoquesTableSeeder::class);
-        $this->call(FornecedoresTableSeeder::class); //é possível chamar as outras classes para semear a base
+        $this->call(FornecedoresTableSeeder::class);
 
     }
 }

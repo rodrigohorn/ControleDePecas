@@ -92,7 +92,6 @@ class PecaController extends Controller
     public function update(Request $request, Peca $peca)
     {
         $peca->update($request->all());
-        return redirect()->route('peca.index');
     }
 
     /**

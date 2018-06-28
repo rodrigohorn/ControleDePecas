@@ -36,7 +36,7 @@
                 </div>
 
 
-                <button class="btn btn-info">Editar</button>
+                <button class="btn btn-info">Salvar</button>
             </form>
         </div>
     </div>

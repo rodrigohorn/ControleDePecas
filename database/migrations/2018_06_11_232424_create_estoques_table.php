@@ -18,7 +18,7 @@ class CreateEstoquesTable extends Migration
             $table->string('nome');
             $table->string('cidade');
             $table->string('endereco');
-            $table->timestamps(); // cria dois campos que armazena data e hora e data e hora da ultima atualização
+            $table->timestamps();
         });
     }
 

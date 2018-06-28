@@ -13,9 +13,7 @@ class EstoqueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() //ele ta chamando a view index.blade.php que ta dentro da pasta estoque nas views,
-        // e passa pra essa view uma variável chamada 'estoque' passando um array
-        // com tds os estoques cadastrados no teu sistema
+    public function index()
     {
         return view('estoque.index', ['estoque' => Estoque::orderBy('nome')->get()]);
     }
@@ -39,6 +37,7 @@ class EstoqueController extends Controller
     public function store(Request $request)
     {
         $estoque = new Estoque($request->all());
+
         if ($estoque->save()) {
             return redirect()->route('estoque.index')->with('message', 'Estoque criado com sucesso!');
         } else {
@@ -52,12 +51,11 @@ class EstoqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Estoque $estoque)     //serve para mostrar detalhes de um registro
+    public function show(Estoque $estoque)
 
     {
-        return view('estoque.show', [
-            'estoque' => $estoque
-        ]);
+        return view('estoque.show', ['estoque' => $estoque ]);
+
     }
 
     /**
